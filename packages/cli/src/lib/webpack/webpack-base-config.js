@@ -357,10 +357,13 @@ module.exports = function createBaseConfig(env) {
 			}),
 			...(tsconfig
 				? [
-					new ForkTsCheckerWebpackPlugin({
-						typescript: {configFile: tsconfig, diagnosticOptions: {semantic: true, syntactic: true} },
-						async: !isProd
-					}),
+						new ForkTsCheckerWebpackPlugin({
+							typescript: {
+								configFile: tsconfig,
+								diagnosticOptions: { semantic: true, syntactic: true },
+							},
+							async: !isProd,
+						}),
 				  ]
 				: []),
 			...(isProd
