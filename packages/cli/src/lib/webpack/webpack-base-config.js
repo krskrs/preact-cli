@@ -360,7 +360,10 @@ module.exports = function createBaseConfig(env) {
 						new ForkTsCheckerWebpackPlugin({
 							typescript: {
 								configFile: tsconfig,
-								diagnosticOptions: { semantic: true, syntactic: true },
+								diagnosticOptions: {
+									semantic: true,
+									syntactic: true,
+								},
 							},
 							async: !isProd,
 						}),
